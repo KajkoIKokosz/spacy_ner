@@ -3,3 +3,4 @@
 /backend/venv/
 /pipes/
 /.idea/
+*/__pycache__/
