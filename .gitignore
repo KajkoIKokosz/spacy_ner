@@ -6,6 +6,6 @@
 */__pycache__/
 /data/
 /pipes/
-/tokenizer
-/meta.json
-/vocab/
+/pipes/tokenizer
+/pipes/meta.json
+/pipes/JdPTj/vocab/

@@ -44,7 +44,7 @@ def prepare_data_(number_of_rows: int, filename: str):
 
 
 def prepare_data(number_of_rows: int, filename: str):
-    query = f"SELECT * FROM rba.address_point limit {number_of_rows};"
+    query = f"SELECT * FROM rba.address_point WHERE numerporzadkowy is not null and ulic_nazwa_1 is not null limit {number_of_rows};"
     results = execute_query(query)
 
     with open(filename, 'w+', encoding="utf-8") as f:
@@ -56,8 +56,8 @@ def prepare_data(number_of_rows: int, filename: str):
             housenumber = row[16] or ""
             zipcode = row[17] or ""
 
-            addr_point = [(voivodeship, 'voivodeship'), (city, 'city'), (street, 'street'),
-                          (housenumber, 'housenumber'), (zipcode, 'zipcode')]
+            addr_point = [(voivodeship, 'VOIVODESHIP'), (city, 'CITY'), (street, 'STREET'),
+                          (housenumber, 'HOUSENUMBER'), (zipcode, 'ZIPCODE')]
             random.shuffle(addr_point)
 
             caret = 0
@@ -65,7 +65,7 @@ def prepare_data(number_of_rows: int, filename: str):
             entities = []
             addr_str = ''
             for shuf_addr in addr_point:
-                addr_str += f'{shuf_addr[0]};'
+                addr_str += f'{shuf_addr[0]} '
                 entities.append([caret, caret + len(shuf_addr[0]), shuf_addr[1]])
                 addr_data.append(entities)
                 caret += len(shuf_addr[0]) + 1
