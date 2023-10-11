@@ -1,6 +1,11 @@
 /ner_address_data_1mln.json
-/ner_address_shfld_1mln.json
+/data/ner_address_shfld_1mln.json
 /backend/venv/
 /pipes/
 /.idea/
 */__pycache__/
+/data/
+/pipes/
+/tokenizer
+/meta.json
+/vocab/
