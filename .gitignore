@@ -9,3 +9,5 @@
 /pipes/tokenizer
 /pipes/meta.json
 /pipes/JdPTj/vocab/
+/address_extraction/
+/address_extraction_housenr/
